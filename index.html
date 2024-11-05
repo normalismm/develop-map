@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아동 발달 설문지</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .question {
+            margin: 15px 0;
+            font-size: 16px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-submit {
+            background-color: #007bff;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+        .btn-reset {
+            background-color: #ff4d4d;
+            margin-top: 10px;
+        }
+        .btn-reset:hover {
+            background-color: #e63e3e;
+        }
+        .result {
+            display: none;
+            background-color: #d4edda;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .result h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .result p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>아동 발달 단계 설문지</h1>
+    
+    <form id="surveyForm">
+        <!-- 신체 발달 -->
+        <div class="question">
+            <label>1. 아기가 머리를 잘 들 수 있나요?</label><br>
+            <input type="radio" name="q1" value="1"> 예
+            <input type="radio" name="q1" value="0"> 아니오
+        </div>
+        <div class="question">
+            <label>2. 아기가 뒤집기를 할 수 있나요?</label><br>
+            <input type="radio" name="q2" value="1"> 예
+            <input type="radio" name="q2" value="0"> 아니오
+        </div>
+        <div class="question">
+            <label>3. 아기가 앉을 수 있나요?</label><br>
+            <input type="radio" name="q3" value="1"> 예
+            <input type="radio" name="q3" value="0"> 아니오
+        </div>
+        <div class="question">
+            <label>4. 아기가 서거나 걷기 시작했나요?</label><br>
+            <input type="radio" name="q4" value="1"> 예
+            <input type="radio" name="q4" value="0"> 아니오
+        </div>
+
+        <!-- 언어 발달 -->
+        <div class="question">
+            <label>5. 아기가 울음 외에 다른 소리를 낼 수 있나요? (예: '응' '으')</label><br>
+            <input type="radio" name="q5" value="1"> 예
+            <input type="radio" name="q5" value="0"> 아니오
+        </div>
+        <div class="question">
+            <label>6. 아기가 간단한 단어(엄마, 아빠 등)를 말할 수 있나요?</label><br>
+            <input type="radio" name="q6" value="1"> 예
+            <input type="radio" name="q6" value="0"> 아니오
+        </div>
+        <div class="question">
+            <label>7. 아기가 두 단어 이상을 조합하여 말하나요?</label><br>
+            <input type="radio" name="q7" value="1"> 예
+            <input type="radio" name="q7" value="0"> 아니오
+        </div>
+
+        <!-- 사회적/정서적 발달 -->
+        <div class="question">
+            <label>8. 아기가 다른 사람과 눈을 맞추는 것을 좋아하나요?</label><br>
+            <input type="radio" name="q8" value="1"> 예
+            <input type="radio" name="q8" value="0"> 아니오
+        </div>
+        <div class="question">
+            <label>9. 아기가 다른 사람의 감정을 이해하고 반응하나요? (예: 웃음, 울음 등)</label><br>
+            <input type="radio" name="q9" value="1"> 예
+            <input type="radio" name="q9" value="0"> 아니오
+        </div>
+        <div class="question">
+            <label>10. 아기가 간단한 놀이를 즐기나요? (예: 공 던지기, 간단한 모방 놀이)</label><br>
+            <input type="radio" name="q10" value="1"> 예
+            <input type="radio" name="q10" value="0"> 아니오
+        </div>
+
+        <!-- 인지 발달 -->
+        <div class="question">
+            <label>11. 아기가 물건을 잡고 손에 쥘 수 있나요?</label><br>
+            <input type="radio" name="q11" value="1"> 예
+            <input type="radio" name="q11" value="0"> 아니오
+        </div>
+        <div class="question">
+            <label>12. 아기가 물건을 다른 곳으로 옮길 수 있나요?</label><br>
+            <input type="radio" name="q12" value="1"> 예
+            <input type="radio" name="q12" value="0"> 아니오
+        </div>
+        <div class="question">
+            <label>13. 아기가 간단한 문제를 해결할 수 있나요? (예: 상자 열기)</label><br>
+            <input type="radio" name="q13" value="1"> 예
+            <input type="radio" name="q13" value="0"> 아니오
+        </div>
+
+        <button type="button" class="btn btn-submit" onclick="calculateResult()">결과 확인</button>
+    </form>
+
+    <div id="result" class="result">
+        <h3>발달 평가 결과</h3>
+        <p id="resultText"></p>
+        <p id="resultMonths"></p>
+        <button class="btn btn-reset" onclick="resetForm()">다시 시작</button>
+    </div>
+</div>
+
+<script>
+    function calculateResult() {
+        let score = 0;
+
+        // 모든 질문에 대해 답변 체크
+        for (let i = 1; i <= 13; i++) {
+            let question = document.querySelector(`input[name="q${i}"]:checked`);
+            if (question) {
+                score += parseInt(question.value);
+            }
+        }
+
+        // 결과 계산 (발달 개월 수로 변환)
+        let resultText = "";
+        let resultMonths = 0;
+        
+        if (score <= 5) {
+            resultText = "발달이 지연될 수 있으므로, 전문가와의 상담을 권장합니다.";
+            resultMonths = 18;
+        } else if (score <= 8) {
+            resultText = "발달이 정상 범위에 있는 것으로 판단됩니다.";
+            resultMonths = 24;
+        } else {
+            resultText = "발달이 빠르거나 예외적인 경우일 수 있으므로, 추가적인 모니터링이 필요할 수 있습니다.";
+            resultMonths = 30;
+        }
+
+        // 결과 출력
+        document.getElementById("resultText").textContent = resultText;
+        document.getElementById("resultMonths").textContent = `예상 발달 개월 수: ${resultMonths}개월`;
+        
+        // 화면 전환
+        document.getElementById("surveyForm").style.display = "none";
+        document.getElementById("result").style.display = "block";
+    }
+
+    // 설문지 리셋
+    function resetForm() {
+        document.getElementById("surveyForm").reset();
+        document.getElementById("surveyForm").style.display = "block";
+        document.getElementById("result").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
